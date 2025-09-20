@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>একাডেমিক কোর্স - Edu World</title>
+    <meta
+      name="description"
+      content="Edu Worldের স্নাতক, স্নাতকোত্তর ও গবেষণা কোর্স সমূহ সম্পর্কে বিস্তারিত জানুন।"
+    />
+
+    <!-- Bengali Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="top-bar">
+        <div class="container">
+          <div class="top-bar-content">
+            <div class="contact-info">
+              <span><i class="fas fa-phone"></i> +৮৮ ০১৭১২-৩৪৫৬৭৮</span>
+              <span
+                ><i class="fas fa-envelope"></i>
+                info@eduworlduniversity.edu.bd</span
+              >
+            </div>
+            <div class="quick-links">
+              <a href="#notice">নোটিশ বোর্ড</a>
+              <a href="#events">ইভেন্ট</a>
+              <a href="#result">ফলাফল</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <div class="university-emblem">
+              <!-- <img
+                src="https://placehold.co/60x60/146b2e/ffffff?text=লোগো"
+                alt="Edu World লোগো"
+              /> -->
+            </div>
+            <div class="university-name">
+              <h1>Edu World</h1>
+              <!-- <p>SHIKKHA WORLD UNIVERSITY</p> -->
+            </div>
+          </div>
+
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">হোম</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">আমাদের সম্পর্কে</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="courses.html" class="nav-link active"
+                >একাডেমিক <i class="fas fa-chevron-down"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="#undergraduate">স্নাতক কোর্স</a></li>
+                <li><a href="#postgraduate">স্নাতকোত্তর কোর্স</a></li>
+                <li><a href="#research">গবেষণা কর্মসূচি</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="admissions.html" class="nav-link">ভর্তি</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">যোগাযোগ</a>
+            </li>
+            <li class="nav-item">
+              <a href="blog.html" class="nav-link">সংবাদ</a>
+            </li>
+          </ul>
+
+          <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Page Header -->
+      <section class="page-header">
+        <div class="container">
+          <div class="breadcrumb">
+            <a href="index.html">হোম</a> > <span>একাডেমিক কোর্স</span>
+          </div>
+          <h1>একাডেমিক কোর্স সমূহ</h1>
+          <p>মানসম্পন্ন শিক্ষা ও গবেষণার মাধ্যমে ভবিষ্যতের নেতৃত্ব তৈরি</p>
+        </div>
+      </section>
+
+      <!-- Course Filter Section -->
+      <section class="course-filter-section">
+        <div class="container">
+          <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">
+              সকল কোর্স
+            </button>
+            <button class="filter-btn" data-filter="undergraduate">
+              স্নাতক
+            </button>
+            <button class="filter-btn" data-filter="postgraduate">
+              স্নাতকোত্তর
+            </button>
+            <button class="filter-btn" data-filter="research">গবেষণা</button>
+            <button class="filter-btn" data-filter="science">বিজ্ঞান</button>
+            <button class="filter-btn" data-filter="arts">কলা</button>
+            <button class="filter-btn" data-filter="business">
+              ব্যবসায়িক
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Undergraduate Courses -->
+      <section class="courses-section" id="undergraduate">
+        <div class="container">
+          <h2 class="section-title">স্নাতক কোর্স সমূহ</h2>
+          <div class="courses-grid">
+            <!-- Computer Science -->
+            <div class="course-card" data-category="undergraduate science">
+              <div class="course-header">
+                <div class="course-icon">
+                  <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="course-badge">স্নাতক</div>
+              </div>
+              <div class="course-content">
+                <h3>কম্পিউটার সাইন্স এন্ড ইঞ্জিনিয়ারিং</h3>
+                <p class="course-subtitle">
+                  Bachelor of Science in Computer Science & Engineering
+                </p>
+                <p>
+                  আধুনিক প্রযুক্তি ও সফটওয়্যার ইঞ্জিনিয়ারিংয়ে দক্ষতা অর্জনের
+                  জন্য ব্যাপক কোর্স।
+                </p>
+
+                <div class="course-details">
+                  <div class="detail-item">
+                    <i class="fas fa-clock"></i>
+                    <span>মেয়াদ: ৪ বছর (৮ সেমিস্টার)</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>ক্রেডিট: ১৪৪</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-users"></i>
+                    <span>আসন সংখ্যা: ৬০</span>
+                  </div>
+                </div>
+
+                <div class="curriculum-highlights">
+                  <h4>মূল বিষয়সমূহ:</h4>
+                  <ul>
+                    <li>প্রোগ্রামিং ভাষা (C, C++, Java, Python)</li>
+                    <li>ডেটা স্ট্রাকচার ও অ্যালগোরিদম</li>
+                    <li>কৃত্রিম বুদ্ধিমত্তা ও মেশিন লার্নিং</li>
+                    <li>ওয়েব ডেভেলপমেন্ট</li>
+                    <li>সফটওয়্যার ইঞ্জিনিয়ারিং</li>
+                    <li>ডেটাবেজ ম্যানেজমেন্ট</li>
+                  </ul>
+                </div>
+
+                <div class="course-footer">
+                  <div class="tuition-fee">
+                    <strong>সেমিস্টার ফি: ৮৫,০০০ টাকা</strong>
+                  </div>
+                  <a href="admissions.html" class="apply-btn">আবেদন করুন</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Business Administration -->
+            <div class="course-card" data-category="undergraduate business">
+              <div class="course-header">
+                <div class="course-icon">
+                  <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="course-badge">স্নাতক</div>
+              </div>
+              <div class="course-content">
+                <h3>ব্যবসায় প্রশাসন</h3>
+                <p class="course-subtitle">
+                  Bachelor of Business Administration (BBA)
+                </p>
+                <p>
+                  আধুনিক ব্যবসায়িক ব্যবস্থাপনা ও উদ্যোক্তা দক্ষতা উন্নয়নের
+                  জন্য সমন্বিত কোর্স।
+                </p>
+
+                <div class="course-details">
+                  <div class="detail-item">
+                    <i class="fas fa-clock"></i>
+                    <span>মেয়াদ: ৪ বছর (৮ সেমিস্টার)</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>ক্রেডিট: ১২৮</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-users"></i>
+                    <span>আসন সংখ্যা: ৮০</span>
+                  </div>
+                </div>
+
+                <div class="curriculum-highlights">
+                  <h4>মূল বিষয়সমূহ:</h4>
+                  <ul>
+                    <li>ব্যবসায়িক গণিত ও পরিসংখ্যান</li>
+                    <li>ব্যবস্থাপনা ও সংগঠন</li>
+                    <li>বিপণন ব্যবস্থাপনা</li>
+                    <li>আর্থিক ব্যবস্থাপনা</li>
+                    <li>মানব সম্পদ ব্যবস্থাপনা</li>
+                    <li>আন্তর্জাতিক ব্যবসা</li>
+                  </ul>
+                </div>
+
+                <div class="course-footer">
+                  <div class="tuition-fee">
+                    <strong>সেমিস্টার ফি: ৬৫,০০০ টাকা</strong>
+                  </div>
+                  <a href="admissions.html" class="apply-btn">আবেদন করুন</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bengali Literature -->
+            <div class="course-card" data-category="undergraduate arts">
+              <div class="course-header">
+                <div class="course-icon">
+                  <i class="fas fa-book-open"></i>
+                </div>
+                <div class="course-badge">স্নাতক</div>
+              </div>
+              <div class="course-content">
+                <h3>বাংলা ভাষা ও সাহিত্য</h3>
+                <p class="course-subtitle">
+                  Bachelor of Arts in Bengali Language & Literature
+                </p>
+                <p>
+                  বাংলা ভাষা, সাহিত্য ও সংস্কৃতির গভীর জ্ঞান অর্জনের জন্য
+                  বিশেষায়িত কোর্স।
+                </p>
+
+                <div class="course-details">
+                  <div class="detail-item">
+                    <i class="fas fa-clock"></i>
+                    <span>মেয়াদ: ৪ বছর (৮ সেমিস্টার)</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>ক্রেডিট: ১২০</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-users"></i>
+                    <span>আসন সংখ্যা: ৪০</span>
+                  </div>
+                </div>
+
+                <div class="curriculum-highlights">
+                  <h4>মূল বিষয়সমূহ:</h4>
+                  <ul>
+                    <li>প্রাচীন বাংলা সাহিত্য</li>
+                    <li>মধ্যযুগের বাংলা সাহিত্য</li>
+                    <li>আধুনিক বাংলা সাহিত্য</li>
+                    <li>বাংলা ভাষাতত্ত্ব</li>
+                    <li>বাংলা ব্যাকরণ ও অভিধান</li>
+                    <li>সৃজনশীল লেখা</li>
+                  </ul>
+                </div>
+
+                <div class="course-footer">
+                  <div class="tuition-fee">
+                    <strong>সেমিস্টার ফি: ৪৫,০০০ টাকা</strong>
+                  </div>
+                  <a href="admissions.html" class="apply-btn">আবেদন করুন</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Economics -->
+            <div class="course-card" data-category="undergraduate arts">
+              <div class="course-header">
+                <div class="course-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="course-badge">স্নাতক</div>
+              </div>
+              <div class="course-content">
+                <h3>অর্থনীতি</h3>
+                <p class="course-subtitle">Bachelor of Arts in Economics</p>
+                <p>
+                  অর্থনৈতিক তত্ত্ব ও নীতি বিশ্লেষণে দক্ষতা অর্জনের জন্য ব্যাপক
+                  কোর্স।
+                </p>
+
+                <div class="course-details">
+                  <div class="detail-item">
+                    <i class="fas fa-clock"></i>
+                    <span>মেয়াদ: ৪ বছর (৮ সেমিস্টার)</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>ক্রেডিট: ১২৪</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-users"></i>
+                    <span>আসন সংখ্যা: ৫০</span>
+                  </div>
+                </div>
+
+                <div class="curriculum-highlights">
+                  <h4>মূল বিষয়সমূহ:</h4>
+                  <ul>
+                    <li>সূক্ষ্ম অর্থনীতি (Microeconomics)</li>
+                    <li>স্থূল অর্থনীতি (Macroeconomics)</li>
+                    <li>অর্থনৈতিক উন্নয়ন</li>
+                    <li>আন্তর্জাতিক অর্থনীতি</li>
+                    <li>অর্থনৈতিক পরিসংখ্যান</li>
+                    <li>বাংলাদেশের অর্থনীতি</li>
+                  </ul>
+                </div>
+
+                <div class="course-footer">
+                  <div class="tuition-fee">
+                    <strong>সেমিস্টার ফি: ৫৫,০০০ টাকা</strong>
+                  </div>
+                  <a href="admissions.html" class="apply-btn">আবেদন করুন</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Postgraduate Courses -->
+      <section class="courses-section" id="postgraduate">
+        <div class="container">
+          <h2 class="section-title">স্নাতকোত্তর কোর্স সমূহ</h2>
+          <div class="courses-grid">
+            <!-- MBA -->
+            <div class="course-card" data-category="postgraduate business">
+              <div class="course-header">
+                <div class="course-icon">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="course-badge postgraduate">স্নাতকোত্তর</div>
+              </div>
+              <div class="course-content">
+                <h3>মাস্টার ইন বিজনেস এডমিনিস্ট্রেশন</h3>
+                <p class="course-subtitle">
+                  Master of Business Administration (MBA)
+                </p>
+                <p>
+                  উচ্চপর্যায়ের ব্যবস্থাপনা ও নেতৃত্বের দক্ষতা অর্জনের জন্য
+                  বিশেষায়িত কোর্স।
+                </p>
+
+                <div class="course-details">
+                  <div class="detail-item">
+                    <i class="fas fa-clock"></i>
+                    <span>মেয়াদ: ২ বছর (৪ সেমিস্টার)</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>ক্রেডিট: ৬০</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-users"></i>
+                    <span>আসন সংখ্যা: ৪০</span>
+                  </div>
+                </div>
+
+                <div class="curriculum-highlights">
+                  <h4>মূল বিষয়সমূহ:</h4>
+                  <ul>
+                    <li>কৌশলগত ব্যবস্থাপনা</li>
+                    <li>নেতৃত্ব ও সংগঠন আচরণ</li>
+                    <li>আর্থিক বিশ্লেষণ ও পরিকল্পনা</li>
+                    <li>অপারেশনস ম্যানেজমেন্ট</li>
+                    <li>ডিজিটাল মার্কেটিং</li>
+                    <li>প্রজেক্ট ম্যানেজমেন্ট</li>
+                  </ul>
+                </div>
+
+                <div class="course-footer">
+                  <div class="tuition-fee">
+                    <strong>সেমিস্টার ফি: ১,২০,০০০ টাকা</strong>
+                  </div>
+                  <a href="admissions.html" class="apply-btn">আবেদন করুন</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- MSc Computer Science -->
+            <div class="course-card" data-category="postgraduate science">
+              <div class="course-header">
+                <div class="course-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div class="course-badge postgraduate">স্নাতকোত্তর</div>
+              </div>
+              <div class="course-content">
+                <h3>মাস্টার ইন কম্পিউটার সাইন্স</h3>
+                <p class="course-subtitle">
+                  Master of Science in Computer Science
+                </p>
+                <p>
+                  কম্পিউটার বিজ্ঞানের উন্নত বিষয় ও গবেষণায় বিশেষজ্ঞতা অর্জনের
+                  কোর্স।
+                </p>
+
+                <div class="course-details">
+                  <div class="detail-item">
+                    <i class="fas fa-clock"></i>
+                    <span>মেয়াদ: ২ বছর (৪ সেমিস্টার)</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>ক্রেডিট: ৫৬</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-users"></i>
+                    <span>আসন সংখ্যা: ৩০</span>
+                  </div>
+                </div>
+
+                <div class="curriculum-highlights">
+                  <h4>বিশেষায়ন ক্ষেত্র:</h4>
+                  <ul>
+                    <li>কৃত্রিম বুদ্ধিমত্তা ও মেশিন লার্নিং</li>
+                    <li>ডেটা সাইন্স ও বিগ ডেটা</li>
+                    <li>সাইবার নিরাপত্তা</li>
+                    <li>ক্লাউড কম্পিউটিং</li>
+                    <li>সফটওয়্যার আর্কিটেকচার</li>
+                    <li>থিসিস/গবেষণা প্রকল্প</li>
+                  </ul>
+                </div>
+
+                <div class="course-footer">
+                  <div class="tuition-fee">
+                    <strong>সেমিস্টার ফি: ৯৫,০০০ টাকা</strong>
+                  </div>
+                  <a href="admissions.html" class="apply-btn">আবেদন করুন</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research Programs -->
+      <section class="courses-section" id="research">
+        <div class="container">
+          <h2 class="section-title">গবেষণা কর্মসূচি</h2>
+          <div class="courses-grid">
+            <!-- PhD Programs -->
+            <div class="course-card" data-category="research">
+              <div class="course-header">
+                <div class="course-icon">
+                  <i class="fas fa-microscope"></i>
+                </div>
+                <div class="course-badge research">গবেষণা</div>
+              </div>
+              <div class="course-content">
+                <h3>ডক্টর অব ফিলোসফি (পিএইচডি)</h3>
+                <p class="course-subtitle">Doctor of Philosophy (PhD)</p>
+                <p>
+                  উচ্চতর গবেষণা ও মৌলিক জ্ঞান সৃষ্টিতে অবদান রাখার জন্য ডক্টরেট
+                  প্রোগ্রাম।
+                </p>
+
+                <div class="course-details">
+                  <div class="detail-item">
+                    <i class="fas fa-clock"></i>
+                    <span>মেয়াদ: ৩-৫ বছর</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>থিসিস ভিত্তিক</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-users"></i>
+                    <span>বার্ষিক আসন: ২০</span>
+                  </div>
+                </div>
+
+                <div class="curriculum-highlights">
+                  <h4>গবেষণার ক্ষেত্র:</h4>
+                  <ul>
+                    <li>কম্পিউটার সাইন্স ও ইঞ্জিনিয়ারিং</li>
+                    <li>ব্যবসায় প্রশাসন</li>
+                    <li>বাংলা ভাষা ও সাহিত্য</li>
+                    <li>অর্থনীতি</li>
+                    <li>গণিত ও পরিসংখ্যান</li>
+                    <li>সমাজবিজ্ঞান</li>
+                  </ul>
+                </div>
+
+                <div class="research-facilities">
+                  <h4>গবেষণা সুবিধা:</h4>
+                  <ul>
+                    <li>✓ ডেডিকেটেড রিসার্চ ল্যাব</li>
+                    <li>✓ ফান্ডিং ও স্কলারশিপ</li>
+                    <li>✓ আন্তর্জাতিক সহযোগিতা</li>
+                    <li>✓ কনফারেন্স সাপোর্ট</li>
+                  </ul>
+                </div>
+
+                <div class="course-footer">
+                  <div class="tuition-fee">
+                    <strong>বার্ষিক ফি: ১,৫০,০০০ টাকা</strong>
+                  </div>
+                  <a href="admissions.html" class="apply-btn">আবেদন করুন</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- MPhil Programs -->
+            <div class="course-card" data-category="research">
+              <div class="course-header">
+                <div class="course-icon">
+                  <i class="fas fa-search"></i>
+                </div>
+                <div class="course-badge research">গবেষণা</div>
+              </div>
+              <div class="course-content">
+                <h3>মাস্টার অব ফিলোসফি (এমফিল)</h3>
+                <p class="course-subtitle">Master of Philosophy (MPhil)</p>
+                <p>
+                  গবেষণা পদ্ধতি শেখা ও মাধ্যমিক গবেষণা কার্যক্রমে অংশগ্রহণের
+                  কোর্স।
+                </p>
+
+                <div class="course-details">
+                  <div class="detail-item">
+                    <i class="fas fa-clock"></i>
+                    <span>মেয়াদ: ২ বছর</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>কোর্স + থিসিস</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-users"></i>
+                    <span>বার্ষিক আসন: ১৫</span>
+                  </div>
+                </div>
+
+                <div class="curriculum-highlights">
+                  <h4>প্রোগ্রামের বৈশিষ্ট্য:</h4>
+                  <ul>
+                    <li>গবেষণা পদ্ধতি প্রশিক্ষণ</li>
+                    <li>লিটারেচার রিভিউ</li>
+                    <li>ডেটা অ্যানালাইসিস</li>
+                    <li>একাডেমিক রাইটিং</li>
+                    <li>সেমিনার উপস্থাপনা</li>
+                    <li>থিসিস প্রস্তুতি ও জমা</li>
+                  </ul>
+                </div>
+
+                <div class="course-footer">
+                  <div class="tuition-fee">
+                    <strong>বার্ষিক ফি: ১,০০,০০০ টাকা</strong>
+                  </div>
+                  <a href="admissions.html" class="apply-btn">আবেদন করুন</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Admission Requirements -->
+      <section class="admission-requirements">
+        <div class="container">
+          <h2 class="section-title">ভর্তির যোগ্যতা ও প্রয়োজনীয় কাগজপত্র</h2>
+          <div class="requirements-grid">
+            <div class="requirement-card">
+              <h3><i class="fas fa-graduation-cap"></i> স্নাতক কোর্সে ভর্তি</h3>
+              <div class="requirement-content">
+                <h4>শিক্ষাগত যোগ্যতা:</h4>
+                <ul>
+                  <li>এসএসসি ও এইচএসসিতে ন্যূনতম জিপিএ ৩.৫০</li>
+                  <li>মোট জিপিএ ৭.০০ (দুই পরীক্ষায়)</li>
+                  <li>ইংরেজিতে পৃথক উত্তীর্ণতা</li>
+                </ul>
+
+                <h4>প্রয়োজনীয় কাগজপত্র:</h4>
+                <ul>
+                  <li>এসএসসি ও এইচএসসি সার্টিফিকেট ও নম্বরপত্র</li>
+                  <li>জন্ম নিবন্ধন সনদের ফটোকপি</li>
+                  <li>পাসপোর্ট সাইজ ছবি (৮ কপি)</li>
+                  <li>অভিভাবকের জাতীয় পরিচয়পত্র</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="requirement-card">
+              <h3>
+                <i class="fas fa-user-graduate"></i> স্নাতকোত্তর কোর্সে ভর্তি
+              </h3>
+              <div class="requirement-content">
+                <h4>শিক্ষাগত যোগ্যতা:</h4>
+                <ul>
+                  <li>স্নাতক ডিগ্রিতে ন্যূনতম সিজিপিএ ৩.০০</li>
+                  <li>সংশ্লিষ্ট বিষয়ে স্নাতক ডিগ্রি</li>
+                  <li>ভর্তি পরীক্ষায় উত্তীর্ণতা</li>
+                </ul>
+
+                <h4>অতিরিক্ত প্রয়োজনীয়তা:</h4>
+                <ul>
+                  <li>স্নাতক সার্টিফিকেট ও ট্রান্সক্রিপ্ট</li>
+                  <li>কাজের অভিজ্ঞতার সনদ (প্রযোজ্য ক্ষেত্রে)</li>
+                  <li>গবেষণা প্রস্তাব (পিএইচডির জন্য)</li>
+                  <li>ইংরেজি দক্ষতার প্রমাণ</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="requirement-card">
+              <h3><i class="fas fa-search"></i> গবেষণা কর্মসূচিতে ভর্তি</h3>
+              <div class="requirement-content">
+                <h4>শিক্ষাগত যোগ্যতা:</h4>
+                <ul>
+                  <li>স্নাতকোত্তর ডিগ্রিতে ন্যূনতম সিজিপিএ ৩.৫০</li>
+                  <li>গবেষণা পদ্ধতির প্রাথমিক জ্ঞান</li>
+                  <li>সুপারভাইজারের সম্মতি</li>
+                </ul>
+
+                <h4>বিশেষ প্রয়োজনীয়তা:</h4>
+                <ul>
+                  <li>বিস্তারিত গবেষণা প্রস্তাব</li>
+                  <li>প্রকাশিত প্রবন্ধ (যদি থাকে)</li>
+                  <li>সুপারভাইজারের সুপারিশপত্র</li>
+                  <li>IELTS/TOEFL স্কোর (বিদেশি শিক্ষার্থী)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="application-cta">
+            <div class="cta-content">
+              <h3>ভর্তির জন্য প্রস্তুত?</h3>
+              <p>আপনার স্বপ্নের কোর্সে ভর্তি হতে আজই আবেদন করুন</p>
+              <div class="cta-buttons">
+                <a href="admissions.html" class="btn btn-primary"
+                  >ভর্তি আবেদন</a
+                >
+                <a href="contact.html" class="btn btn-secondary"
+                  >যোগাযোগ করুন</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <div class="university-info">
+                <div class="footer-logo">
+                  <!-- <img
+                    src="https://placehold.co/50x50/146b2e/ffffff?text=লোগো"
+                    alt="Edu World"
+                  /> -->
+                  <div>
+                    <h3>Edu World</h3>
+                    <!-- <p>Shikkha World University</p> -->
+                  </div>
+                </div>
+                <p>
+                  জ্ঞানের আলোয় উজ্জ্বল ভবিষ্যৎ গড়ার অঙ্গীকার নিয়ে আমরা এগিয়ে
+                  চলেছি শিক্ষার্থীদের স্বপ্ন পূরণের পথে।
+                </p>
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h3>দ্রুত লিংক</h3>
+              <ul>
+                <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+                <li><a href="courses.html">একাডেমিক কোর্স</a></li>
+                <li><a href="admissions.html">ভর্তি তথ্য</a></li>
+                <li><a href="#result">পরীক্ষার ফলাফল</a></li>
+                <li><a href="blog.html">সংবাদ ও ঘোষণা</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h3>যোগাযোগ</h3>
+              <div class="contact-info">
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> চট্টগ্রাম-৪০০০, বাংলাদেশ
+                </p>
+                <p><i class="fas fa-phone"></i> +৮৮ ০১৭১২-৩৪৫৬৭৮</p>
+                <p>
+                  <i class="fas fa-envelope"></i> info@eduworlduniversity.edu.bd
+                </p>
+                <p>
+                  <i class="fas fa-globe"></i> www.eduworlduniversity.edu.bd
+                </p>
+              </div>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h3>নিউজলেটার</h3>
+              <p>সর্বশেষ সংবাদ ও ঘোষণা পেতে সাবস্ক্রাইব করুন</p>
+              <form class="newsletter-form">
+                <input type="email" placeholder="আপনার ইমেইল ঠিকানা" required />
+                <button type="submit">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            &copy; ২০২৫ Edu World। সর্বস্বত্ব সংরক্ষিত। |
+            গোপনীয়তা নীতি | ব্যবহারের শর্তাবলী
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
