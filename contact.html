@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>যোগাযোগ - Edu World</title>
+    <meta
+      name="description"
+      content="Edu Worldের সাথে যোগাযোগ করুন। আমাদের ঠিকানা, ফোন নম্বর এবং যোগাযোগ ফরম।"
+    />
+
+    <!-- Bengali Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="top-bar">
+        <div class="container">
+          <div class="top-bar-content">
+            <div class="contact-info">
+              <span><i class="fas fa-phone"></i> +৮৮ ০১৭১২-৩৪৫৬৭৮</span>
+              <span
+                ><i class="fas fa-envelope"></i>
+                info@eduworlduniversity.edu.bd</span
+              >
+            </div>
+            <div class="quick-links">
+              <a href="#notice">নোটিশ বোর্ড</a>
+              <a href="#events">ইভেন্ট</a>
+              <a href="#result">ফলাফল</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <!-- <div class="university-emblem">
+                        <img src="https://placehold.co/60x60/146b2e/ffffff?text=লোগো" alt="Edu World লোগো">
+                    </div> -->
+            <div class="university-name">
+              <h1>Edu World</h1>
+              <!-- <p>SHIKKHA WORLD UNIVERSITY</p> -->
+            </div>
+          </div>
+
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">হোম</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">আমাদের সম্পর্কে</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="courses.html" class="nav-link"
+                >একাডেমিক <i class="fas fa-chevron-down"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">স্নাতক কোর্স</a></li>
+                <li><a href="#">স্নাতকোত্তর কোর্স</a></li>
+                <li><a href="#">গবেষণা কর্মসূচি</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="admissions.html" class="nav-link">ভর্তি</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link active">যোগাযোগ</a>
+            </li>
+            <li class="nav-item">
+              <a href="blog.html" class="nav-link">সংবাদ</a>
+            </li>
+          </ul>
+
+          <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Page Header -->
+      <section class="page-header">
+        <div class="container">
+          <div class="breadcrumb">
+            <a href="index.html">হোম</a> > <span>যোগাযোগ</span>
+          </div>
+          <h1>যোগাযোগ</h1>
+          <p>আমাদের সাথে যোগাযোগ করুন - আমরা সর্বদা আপনার সেবায় নিয়োজিত</p>
+        </div>
+      </section>
+
+      <!-- Contact Form & Info -->
+      <section class="contact-main">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+              <div class="form-header">
+                <h2>আমাদের সাথে যোগাযোগ করুন</h2>
+                <p>
+                  আপনার যেকোন প্রশ্ন বা মতামত আমাদের কাছে পাঠান। আমরা ২৪ ঘন্টার
+                  মধ্যে উত্তর দেওয়ার চেষ্টা করব।
+                </p>
+              </div>
+
+              <form class="contact-form" id="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">পূর্ণ নাম *</label>
+                    <input type="text" id="name" name="name" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">ইমেইল ঠিকানা *</label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="phone">ফোন নম্বর</label>
+                    <input type="tel" id="phone" name="phone" />
+                  </div>
+                  <div class="form-group">
+                    <label for="subject">বিষয় *</label>
+                    <select id="subject" name="subject" required>
+                      <option value="">বিষয় নির্বাচন করুন</option>
+                      <option value="admission">ভর্তি সংক্রান্ত</option>
+                      <option value="academic">একাডেমিক তথ্য</option>
+                      <option value="scholarship">বৃত্তি সংক্রান্ত</option>
+                      <option value="general">সাধারণ প্রশ্ন</option>
+                      <option value="complaint">অভিযোগ</option>
+                      <option value="other">অন্যান্য</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">বার্তা *</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="আপনার প্রশ্ন বা মতামত এখানে লিখুন..."
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                  <input type="checkbox" id="newsletter" name="newsletter" />
+                  <label for="newsletter"
+                    >আমি নিয়মিত নিউজলেটার এবং আপডেট পেতে চাই</label
+                  >
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">
+                  <i class="fas fa-paper-plane"></i>
+                  বার্তা পাঠান
+                </button>
+              </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info-section">
+              <div class="info-card">
+                <h3><i class="fas fa-university"></i> প্রধান ক্যাম্পাস</h3>
+                <div class="info-details">
+                  <p>
+                    <i class="fas fa-map-marker-alt"></i> ১২৩ শিক্ষা রোড,
+                    নাসিরাবাদ<br />
+                    চট্টগ্রাম-৪০০০, বাংলাদেশ
+                  </p>
+                  <p><i class="fas fa-phone"></i> +৮৮ ০১৭১২-৩৪৫৬৭৮</p>
+                  <p><i class="fas fa-fax"></i> +৮৮ ০৩১-১২৩৪৫৬</p>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <h3><i class="fas fa-envelope"></i> ইমেইল ঠিকানা</h3>
+                <div class="info-details">
+                  <p>
+                    <i class="fas fa-at"></i> info@eduworlduniversity.edu.bd
+                  </p>
+                  <p>
+                    <i class="fas fa-user-tie"></i>
+                    admission@eduworlduniversity.edu.bd
+                  </p>
+                  <p>
+                    <i class="fas fa-graduation-cap"></i>
+                    academic@eduworlduniversity.edu.bd
+                  </p>
+                  <p>
+                    <i class="fas fa-phone-alt"></i>
+                    support@eduworlduniversity.edu.bd
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <h3><i class="fas fa-clock"></i> অফিস সময়</h3>
+                <div class="info-details">
+                  <div class="schedule-item">
+                    <span class="day">রবিবার - বৃহস্পতিবার</span>
+                    <span class="time">সকাল ৯:০০ - বিকাল ৫:০০</span>
+                  </div>
+                  <div class="schedule-item">
+                    <span class="day">শুক্রবার</span>
+                    <span class="time">সকাল ৯:০০ - দুপুর ১২:৩০</span>
+                  </div>
+                  <div class="schedule-item">
+                    <span class="day">শনিবার</span>
+                    <span class="time">বন্ধ</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <h3><i class="fas fa-share-alt"></i> সোশ্যাল মিডিয়া</h3>
+                <div class="social-media-links">
+                  <a href="#" class="social-link facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                  </a>
+                  <a href="#" class="social-link youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                  </a>
+                  <a href="#" class="social-link linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                  </a>
+                  <a href="#" class="social-link twitter">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Map Section -->
+      <section class="map-section">
+        <div class="container">
+          <h2 class="section-title">আমাদের অবস্থান</h2>
+          <div class="map-container">
+            <div class="map-embed">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.5674738442487!2d91.7834275!3d22.337777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd8a64ddf14fd%3A0x4b8b7d87a5c5e8f2!2z4KaP4KaV4Ka-4Kam4Ka_4KaV!5e0!3m2!1sbn!2sbd!4v1600000000000!5m2!1sbn!2sbd"
+                width="100%"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+            <div class="map-info">
+              <h3>কিভাবে আসবেন</h3>
+              <div class="transport-info">
+                <div class="transport-item">
+                  <i class="fas fa-bus"></i>
+                  <div>
+                    <h4>বাস যোগে</h4>
+                    <p>
+                      ঢাকা থেকে চট্টগ্রামগামী যেকোনো বাসে এসে নাসিরাবাদ স্টপেজে
+                      নামুন। সেখান থেকে রিকশা/সিএনজিতে ৫ মিনিট।
+                    </p>
+                  </div>
+                </div>
+                <div class="transport-item">
+                  <i class="fas fa-train"></i>
+                  <div>
+                    <h4>ট্রেন যোগে</h4>
+                    <p>
+                      চট্টগ্রাম রেলওয়ে স্টেশন থেকে অটো/সিএনজি যোগে সরাসরি আসতে
+                      পারবেন। সময় লাগবে প্রায় ৩০ মিনিট।
+                    </p>
+                  </div>
+                </div>
+                <div class="transport-item">
+                  <i class="fas fa-plane"></i>
+                  <div>
+                    <h4>বিমান যোগে</h4>
+                    <p>
+                      শাহ আমানত আন্তর্জাতিক বিমানবন্দর থেকে প্রিপেইড ট্যাক্সি
+                      অথবা উবার/পাঠাও এ আসতে পারেন।
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Departments Contact -->
+      <section class="departments-contact">
+        <div class="container">
+          <h2 class="section-title">বিভাগ অনুযায়ী যোগাযোগ</h2>
+          <div class="departments-grid">
+            <div class="department-card">
+              <div class="dept-icon">
+                <i class="fas fa-user-graduate"></i>
+              </div>
+              <h3>ভর্তি বিভাগ</h3>
+              <div class="dept-contact">
+                <p><strong>জনাব আব্দুল করিম</strong>| ভর্তি নিয়ন্ত্রক</p>
+                <p><i class="fas fa-phone"></i> +৮৮ ০১৭১২-৩৪৫৬৭৮</p>
+                <p>
+                  <i class="fas fa-envelope"></i>
+                  admission@eduworlduniversity.edu.bd
+                </p>
+                <p><i class="fas fa-clock"></i> রবি-বৃহঃ ৯:০০-৫:০০</p>
+              </div>
+            </div>
+
+            <div class="department-card">
+              <div class="dept-icon">
+                <i class="fas fa-book"></i>
+              </div>
+              <h3>একাডেমিক বিভাগ</h3>
+              <div class="dept-contact">
+                <p>
+                  <strong>অধ্যাপক ড. ফাতেমা খাতুন</strong>| একাডেমিক
+                  নিয়ন্ত্রক
+                </p>
+                <p><i class="fas fa-phone"></i> +৮৮ ০১৮১২-৯৮৭৬৫ৄ</p>
+                <p>
+                  <i class="fas fa-envelope"></i>
+                  academic@eduworlduniversity.edu.bd
+                </p>
+                <p><i class="fas fa-clock"></i> রবি-বৃহঃ ৯:০০-৫:০০</p>
+              </div>
+            </div>
+
+            <div class="department-card">
+              <div class="dept-icon">
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+              <h3>হিসাব বিভাগ</h3>
+              <div class="dept-contact">
+                <p><strong>জনাব মোহাম্মদ আলী</strong>| হিসাব কর্মকর্তা</p>
+                <p><i class="fas fa-phone"></i> +৮৮ ০১৯১২-৭৬৫ৄ৩২</p>
+                <p>
+                  <i class="fas fa-envelope"></i>
+                  accounts@eduworlduniversity.edu.bd
+                </p>
+                <p><i class="fas fa-clock"></i> রবি-বৃহঃ ৯:০০-৫:০০</p>
+              </div>
+            </div>
+
+            <div class="department-card">
+              <div class="dept-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>শিক্ষার্থী সেবা</h3>
+              <div class="dept-contact">
+                <p>
+                  <strong>জনাব রহিমা বেগম</strong>| শিক্ষার্থী সেবা
+                  কর্মকর্তা
+                </p>
+                <p><i class="fas fa-phone"></i> +৮৮ ০১৬১২-৮৭৬৫ৄ৩</p>
+                <p>
+                  <i class="fas fa-envelope"></i>
+                  student@eduworlduniversity.edu.bd
+                </p>
+                <p><i class="fas fa-clock"></i> রবি-বৃহঃ ৮:৩০-৬:০০</p>
+              </div>
+            </div>
+
+            <div class="department-card">
+              <div class="dept-icon">
+                <i class="fas fa-laptop"></i>
+              </div>
+              <h3>আইটি সাপোর্ট</h3>
+              <div class="dept-contact">
+                <p><strong>জনাব কামাল হোসেন</strong>| আইটি ব্যবস্থাপক</p>
+                <p><i class="fas fa-phone"></i> +৮৮ ০১৫১২-৬৫ৄ৩২১</p>
+                <p>
+                  <i class="fas fa-envelope"></i> it@eduworlduniversity.edu.bd
+                </p>
+                <p><i class="fas fa-clock"></i> রবি-শুক্র ৮:০০-৮:০০</p>
+              </div>
+            </div>
+
+            <div class="department-card">
+              <div class="dept-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3>হোস্টেল বিভাগ</h3>
+              <div class="dept-contact">
+                <p><strong>জনাব সালাহউদ্দিন</strong>| হোস্টেল সুপার</p>
+                <p><i class="fas fa-phone"></i> +৮৮ ০১৭১২-ৄ৫৬৭৮৯</p>
+                <p>
+                  <i class="fas fa-envelope"></i>
+                  hostel@eduworlduniversity.edu.bd
+                </p>
+                <p><i class="fas fa-clock"></i> ২ৄ/৭ জরুরি সেবা</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Emergency Contacts -->
+      <section class="emergency-contact">
+        <div class="container">
+          <h2 class="section-title">জরুরি যোগাযোগ</h2>
+          <div class="emergency-grid">
+            <div class="emergency-card">
+              <div class="emergency-icon">
+                <i class="fas fa-ambulance"></i>
+              </div>
+              <h3>মেডিক্যাল ইমার্জেন্সি</h3>
+              <div class="emergency-info">
+                <p><strong>ক্যাম্পাস মেডিক্যাল সেন্টার</strong></p>
+                <p><i class="fas fa-phone"></i> +৮৮ ০১৭১২-৯৯৯০০০</p>
+                <p><i class="fas fa-clock"></i> ২ৄ ঘন্টা সেবা</p>
+              </div>
+            </div>
+
+            <div class="emergency-card">
+              <div class="emergency-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3>নিরাপত্তা বিভাগ</h3>
+              <div class="emergency-info">
+                <p><strong>ক্যাম্পাস নিরাপত্তা</strong></p>
+                <p><i class="fas fa-phone"></i> +৮৮ ০১৭১২-৯৯৯১১১</p>
+                <p><i class="fas fa-clock"></i> ২ৄ ঘন্টা সেবা</p>
+              </div>
+            </div>
+
+            <div class="emergency-card">
+              <div class="emergency-icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <h3>প্রযুক্তিগত সহায়তা</h3>
+              <div class="emergency-info">
+                <p><strong>টেকনিক্যাল হেল্পডেস্ক</strong></p>
+                <p><i class="fas fa-phone"></i> +৮৮ ০১৭১২-৯৯৯২২২</p>
+                <p><i class="fas fa-clock"></i> রবি-শুক্র ৮:০০-১০:০০</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visit Campus -->
+      <section class="visit-campus">
+        <div class="container">
+          <div class="visit-content">
+            <div class="visit-text">
+              <h2>ক্যাম্পাস ভ্রমণ করুন</h2>
+              <p>
+                আমাদের সুন্দর ক্যাম্পাস দেখতে আসুন এবং আমাদের শিক্ষা পরিবেশ
+                সম্পর্কে জানুন। আপনি চাইলে আগে থেকে অ্যাপয়েন্টমেন্ট নিয়ে আসতে
+                পারেন।
+              </p>
+
+              <div class="visit-features">
+                <div class="visit-feature">
+                  <i class="fas fa-walking"></i>
+                  <span>গাইডেড ট্যুর</span>
+                </div>
+                <div class="visit-feature">
+                  <i class="fas fa-users"></i>
+                  <span>ফ্যাকাল্টি মিটিং</span>
+                </div>
+                <div class="visit-feature">
+                  <i class="fas fa-book-open"></i>
+                  <span>ক্লাস পর্যবেক্ষণ</span>
+                </div>
+              </div>
+
+              <div class="visit-buttons">
+                <a href="#" class="btn btn-primary">
+                  <i class="fas fa-calendar-check"></i>
+                  ভিজিট বুক করুন
+                </a>
+                <a href="about.html" class="btn btn-secondary">
+                  <i class="fas fa-info-circle"></i>
+                  আরো জানুন
+                </a>
+              </div>
+            </div>
+
+            <div class="visit-image">
+              <img
+                src="assets/images/Leonardo_Kino_XL_Bangladeshi_Digital_Marketing_classroom_2.jpg"
+                alt="ক্যাম্পাস ভ্রমণ"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <div class="university-info">
+                <div class="footer-logo">
+                  <div>
+                    <h3>Edu World</h3>
+                  </div>
+                </div>
+                <p>
+                  জ্ঞানের আলোয় উজ্জ্বল ভবিষ্যৎ গড়ার অঙ্গীকার নিয়ে আমরা এগিয়ে
+                  চলেছি শিক্ষার্থীদের স্বপ্ন পূরণের পথে।
+                </p>
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h3>দ্রুত লিংক</h3>
+              <ul>
+                <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+                <li><a href="courses.html">একাডেমিক কোর্স</a></li>
+                <li><a href="admissions.html">ভর্তি তথ্য</a></li>
+                <li><a href="#result">পরীক্ষার ফলাফল</a></li>
+                <li><a href="blog.html">সংবাদ ও ঘোষণা</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h3>যোগাযোগ</h3>
+              <div class="contact-info">
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> চট্টগ্রাম-৪০০০, বাংলাদেশ
+                </p>
+                <p><i class="fas fa-phone"></i> +৮৮ ০১৭১২-৩৪৫৬৭৮</p>
+                <p>
+                  <i class="fas fa-envelope"></i> info@eduworlduniversity.edu.bd
+                </p>
+                <p>
+                  <i class="fas fa-globe"></i> www.eduworlduniversity.edu.bd
+                </p>
+              </div>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h3>নিউজলেটার</h3>
+              <p>সর্বশেষ সংবাদ ও ঘোষণা পেতে সাবস্ক্রাইব করুন</p>
+              <form class="newsletter-form">
+                <input type="email" placeholder="আপনার ইমেইল ঠিকানা" required />
+                <button type="submit">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            &copy; ২০২৫ Edu World। সর্বস্বত্ব সংরক্ষিত। | গোপনীয়তা নীতি |
+            ব্যবহারের শর্তাবলী
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1234,3 +1234,524 @@ window.addEventListener("resize", function () {
     }
   }, 250);
 });
+
+// Blog Page JavaScript Functionality
+// Add this to your existing script.js file
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Blog Filter Functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    if (filterBtns.length > 0 && blogCards.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                blogCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                        card.classList.remove('hide');
+                    } else {
+                        const cardCategory = card.getAttribute('data-category');
+                        if (cardCategory === filterValue) {
+                            card.style.display = 'block';
+                            card.classList.remove('hide');
+                        } else {
+                            card.classList.add('hide');
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    }
+                });
+                
+                // Re-arrange grid after filtering
+                setTimeout(() => {
+                    const blogGrid = document.querySelector('.blog-grid');
+                    if (blogGrid) {
+                        blogGrid.style.display = 'none';
+                        blogGrid.offsetHeight; // Trigger reflow
+                        blogGrid.style.display = 'grid';
+                    }
+                }, 350);
+            });
+        });
+    }
+    
+    // Search Functionality
+    const searchInput = document.getElementById('search-input');
+    const searchBtn = document.querySelector('.search-btn');
+    
+    function performSearch() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        
+        blogCards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const content = card.querySelector('p').textContent.toLowerCase();
+            const category = card.querySelector('.category').textContent.toLowerCase();
+            
+            if (title.includes(searchTerm) || 
+                content.includes(searchTerm) || 
+                category.includes(searchTerm) || 
+                searchTerm === '') {
+                card.style.display = 'block';
+                card.classList.remove('hide');
+            } else {
+                card.classList.add('hide');
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
+        });
+        
+        // Reset active filter when searching
+        if (searchTerm !== '') {
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+        }
+    }
+    
+    if (searchBtn) {
+        searchBtn.addEventListener('click', performSearch);
+    }
+    
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                performSearch();
+            }
+        });
+        
+        // Live search with debounce
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(performSearch, 300);
+        });
+    }
+    
+    // Load More Functionality
+    const loadMoreBtn = document.querySelector('.load-more-btn');
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            // Show loading state
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> লোড হচ্ছে...';
+            this.disabled = true;
+            
+            // Simulate loading delay
+            setTimeout(() => {
+                // Add more blog cards (this would typically fetch from server)
+                addMoreBlogPosts();
+                
+                // Reset button
+                this.innerHTML = originalText;
+                this.disabled = false;
+            }, 1500);
+        });
+    }
+    
+    // Newsletter Subscription
+    const newsletterForm = document.querySelector('.newsletter-subscribe-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            if (email) {
+                // Show success message
+                const button = this.querySelector('button');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> সফল!';
+                button.style.background = '#28a745';
+                
+                // Reset after 3 seconds
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = '';
+                    this.reset();
+                }, 3000);
+                
+                // Show notification
+                showNotification('সফলভাবে সাবস্ক্রিপশন সম্পন্ন হয়েছে!', 'success');
+            }
+        });
+    }
+    
+    // Smooth scrolling for read more buttons
+    const readMoreBtns = document.querySelectorAll('.read-more-btn, .read-more');
+    readMoreBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Add smooth transition effect
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+            
+            // In a real implementation, this would navigate to the full article
+            showNotification('পূর্ণ নিবন্ধটি শীঘ্রই উপলব্ধ হবে', 'info');
+        });
+    });
+    
+    // Category and archive links functionality
+    const categoryLinks = document.querySelectorAll('.category-list a, .archive-list a');
+    categoryLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            showNotification('এই বিভাগের সংবাদ শীঘ্রই লোড হবে', 'info');
+        });
+    });
+    
+    // Social sharing functionality for blog posts
+    addSocialSharing();
+    
+    // Initialize animations
+    initScrollAnimations();
+    
+    // Featured news auto-rotation (optional)
+    initFeaturedNewsRotation();
+});
+
+// Function to add more blog posts (simulated)
+function addMoreBlogPosts() {
+    const blogGrid = document.querySelector('.blog-grid');
+    const morePosts = [
+        {
+            category: 'academic',
+            title: 'ডিজিটাল লাইব্রেরি সিস্টেম উন্নতি',
+            content: 'বিশ্ববিদ্যালয়ের লাইব্রেরি সিস্টেমে নতুন ডিজিটাল সুবিধা যোগ করা হয়েছে।',
+            date: { day: '১৩', month: 'সেপ্ট' },
+            author: 'লাইব্রেরি বিভাগ',
+            image: 'https://placehold.co/400x250/2ecc71/ffffff?text=ডিজিটাল+লাইব্রেরি'
+        },
+        {
+            category: 'events',
+            title: 'ক্যারিয়ার মেলা ২০২৫',
+            content: 'আগামী মাসে অনুষ্ঠিত হবে বার্ষিক ক্যারিয়ার মেলা।',
+            date: { day: '১২', month: 'সেপ্ট' },
+            author: 'প্লেসমেন্ট সেল',
+            image: 'https://placehold.co/400x250/3498db/ffffff?text=ক্যারিয়ার+মেলা'
+        }
+    ];
+    
+    morePosts.forEach(post => {
+        const blogCard = createBlogCard(post);
+        blogGrid.appendChild(blogCard);
+    });
+}
+
+// Function to create blog card element
+function createBlogCard(post) {
+    const article = document.createElement('article');
+    article.className = 'blog-card';
+    article.setAttribute('data-category', post.category);
+    
+    article.innerHTML = `
+        <div class="blog-image">
+            <img src="${post.image}" alt="${post.title}" />
+            <div class="blog-date">
+                <span class="day">${post.date.day}</span>
+                <span class="month">${post.date.month}</span>
+            </div>
+        </div>
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="category ${post.category}">${getCategoryName(post.category)}</span>
+                <span class="author">
+                    <i class="fas fa-user"></i>
+                    ${post.author}
+                </span>
+            </div>
+            <h3>${post.title}</h3>
+            <p>${post.content}</p>
+            <div class="blog-footer">
+                <span class="read-time">
+                    <i class="fas fa-clock"></i>
+                    ৩ মিনিট পড়া
+                </span>
+                <a href="#" class="read-more">বিস্তারিত</a>
+            </div>
+        </div>
+    `;
+    
+    // Add event listeners to new elements
+    const readMoreBtn = article.querySelector('.read-more');
+    readMoreBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        showNotification('পূর্ণ নিবন্ধটি শীঘ্রই উপলব্ধ হবে', 'info');
+    });
+    
+    return article;
+}
+
+// Helper function to get category name in Bengali
+function getCategoryName(category) {
+    const categories = {
+        'notice': 'নোটিশ',
+        'academic': 'একাডেমিক',
+        'events': 'ইভেন্ট',
+        'achievement': 'অর্জন',
+        'admission': 'ভর্তি'
+    };
+    return categories[category] || 'সাধারণ';
+}
+
+// Notification system
+function showNotification(message, type = 'info') {
+    // Remove existing notification
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas ${getNotificationIcon(type)}"></i>
+            <span>${message}</span>
+            <button class="notification-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `;
+    
+    // Add styles
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${getNotificationColor(type)};
+        color: white;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        z-index: 10000;
+        transform: translateX(400px);
+        transition: transform 0.3s ease;
+        max-width: 300px;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Auto remove
+    setTimeout(() => {
+        notification.style.transform = 'translateX(400px)';
+        setTimeout(() => notification.remove(), 300);
+    }, 4000);
+    
+    // Close button
+    notification.querySelector('.notification-close').addEventListener('click', () => {
+        notification.style.transform = 'translateX(400px)';
+        setTimeout(() => notification.remove(), 300);
+    });
+}
+
+function getNotificationIcon(type) {
+    const icons = {
+        'success': 'fa-check-circle',
+        'error': 'fa-exclamation-triangle',
+        'warning': 'fa-exclamation-circle',
+        'info': 'fa-info-circle'
+    };
+    return icons[type] || 'fa-info-circle';
+}
+
+function getNotificationColor(type) {
+    const colors = {
+        'success': '#28a745',
+        'error': '#dc3545',
+        'warning': '#ffc107',
+        'info': '#17a2b8'
+    };
+    return colors[type] || '#17a2b8';
+}
+
+// Social sharing functionality
+function addSocialSharing() {
+    const blogCards = document.querySelectorAll('.blog-card');
+    blogCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            if (!this.querySelector('.social-share')) {
+                const shareDiv = document.createElement('div');
+                shareDiv.className = 'social-share';
+                shareDiv.innerHTML = `
+                    <button class="share-btn facebook" data-platform="facebook" title="Facebook এ শেয়ার">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                    <button class="share-btn twitter" data-platform="twitter" title="Twitter এ শেয়ার">
+                        <i class="fab fa-twitter"></i>
+                    </button>
+                    <button class="share-btn linkedin" data-platform="linkedin" title="LinkedIn এ শেয়ার">
+                        <i class="fab fa-linkedin-in"></i>
+                    </button>
+                `;
+                
+                shareDiv.style.cssText = `
+                    position: absolute;
+                    top: 15px;
+                    left: 15px;
+                    display: flex;
+                    gap: 5px;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                `;
+                
+                const blogImage = this.querySelector('.blog-image');
+                blogImage.style.position = 'relative';
+                blogImage.appendChild(shareDiv);
+                
+                setTimeout(() => {
+                    shareDiv.style.opacity = '1';
+                }, 100);
+                
+                // Add share button styles and functionality
+                shareDiv.querySelectorAll('.share-btn').forEach(btn => {
+                    btn.style.cssText = `
+                        width: 35px;
+                        height: 35px;
+                        border: none;
+                        border-radius: 50%;
+                        color: white;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: transform 0.3s ease;
+                        font-size: 14px;
+                    `;
+                    
+                    const platform = btn.dataset.platform;
+                    if (platform === 'facebook') btn.style.background = '#1877f2';
+                    else if (platform === 'twitter') btn.style.background = '#1da1f2';
+                    else if (platform === 'linkedin') btn.style.background = '#0077b5';
+                    
+                    btn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const title = card.querySelector('h3').textContent;
+                        shareContent(platform, title);
+                    });
+                    
+                    btn.addEventListener('mouseenter', function() {
+                        this.style.transform = 'scale(1.1)';
+                    });
+                    
+                    btn.addEventListener('mouseleave', function() {
+                        this.style.transform = 'scale(1)';
+                    });
+                });
+            }
+        });
+    });
+}
+
+function shareContent(platform, title) {
+    const url = window.location.href;
+    let shareUrl;
+    
+    switch(platform) {
+        case 'facebook':
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            break;
+        case 'twitter':
+            shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
+            break;
+        case 'linkedin':
+            shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+            break;
+    }
+    
+    if (shareUrl) {
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
+}
+
+// Scroll animations
+function initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.transform = 'translateY(0)';
+                entry.target.style.opacity = '1';
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    // Animate blog cards on scroll
+    document.querySelectorAll('.blog-card, .featured-card, .sidebar-widget').forEach(el => {
+        el.style.transform = 'translateY(30px)';
+        el.style.opacity = '0';
+        el.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+        observer.observe(el);
+    });
+}
+
+// Featured news rotation (optional)
+function initFeaturedNewsRotation() {
+    const featuredNews = [
+        {
+            title: 'নতুন একাডেমিক ভবন উদ্বোধন অনুষ্ঠান',
+            content: 'Edu World বিশ্ববিদ্যালয়ের অত্যাধুনিক একাডেমিক ভবনের উদ্বোধন হবে আগামী মাসে।',
+            image: 'https://placehold.co/600x350/146b2e/ffffff?text=বিশ্ববিদ্যালয়+উন্নয়ন+প্রকল্প',
+            category: 'academic',
+            date: '২১ সেপ্টেম্বর, ২০২৫'
+        },
+        {
+            title: 'আন্তর্জাতিক গবেষণা সহযোগিতা চুক্তি',
+            content: 'বিদেশী বিশ্ববিদ্যালয়ের সাথে গবেষণা ক্ষেত্রে নতুন সহযোগিতা চুক্তি স্বাক্ষরিত হয়েছে।',
+            image: 'https://placehold.co/600x350/d4af37/ffffff?text=গবেষণা+সহযোগিতা',
+            category: 'academic',
+            date: '২০ সেপ্টেম্বর, ২০২৫'
+        }
+    ];
+    
+    let currentFeatured = 0;
+    const featuredCard = document.querySelector('.featured-card');
+    
+    if (featuredCard && featuredNews.length > 1) {
+        setInterval(() => {
+            currentFeatured = (currentFeatured + 1) % featuredNews.length;
+            updateFeaturedNews(featuredCard, featuredNews[currentFeatured]);
+        }, 8000); // Change every 8 seconds
+    }
+}
+
+function updateFeaturedNews(card, news) {
+    const image = card.querySelector('.featured-image img');
+    const title = card.querySelector('h2');
+    const content = card.querySelector('p');
+    const category = card.querySelector('.category');
+    const date = card.querySelector('.date');
+    
+    // Fade out
+    card.style.opacity = '0.7';
+    
+    setTimeout(() => {
+        image.src = news.image;
+        title.textContent = news.title;
+        content.textContent = news.content;
+        category.textContent = getCategoryName(news.category);
+        category.className = `category ${news.category}`;
+        date.innerHTML = `<i class="fas fa-calendar"></i> ${news.date}`;
+        
+        // Fade in
+        card.style.opacity = '1';
+    }, 300);
+}
